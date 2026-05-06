@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eugene J. Geis, PhD</title>
+  <meta name="description" content="Statistician, AI researcher, educator, and ordained minister. Head of AI/ML & Research at Bitscopic. Writing about cognitive sovereignty in the age of the anthropomorphism cascade.">
+  <meta property="og:title" content="Eugene J. Geis, PhD">
+  <meta property="og:description" content="Statistician. AI researcher. Educator. Writing about what AI is doing to the way we think.">
+  <meta property="og:image" content="./hero.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg:           #07090e;
+      --surface:      #0c0f18;
+      --surface-2:    #111520;
+      --border:       rgba(255, 255, 255, 0.055);
+      --border-warm:  rgba(200, 147, 60, 0.25);
+      --amber:        #c8933c;
+      --amber-light:  #dba84f;
+      --text:         #ddd8cf;
+      --text-mid:     #9ea6bc;
+      --text-muted:   #5a6278;
+      --text-dim:     #2e3348;
+      --radius:       3px;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.65;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────────────── */
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── HEADER ─────────────────────────────────────────── */
+
+    .site-header {
+      padding: 64px 0 0;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 22px;
+    }
+
+    .site-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(38px, 6vw, 58px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+
+    .site-name em {
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(221, 216, 207, 0.6);
+    }
+
+    .credentials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+      margin-bottom: 28px;
+    }
+
+    .credential {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding: 4px 12px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(16px, 2.4vw, 20px);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(221, 216, 207, 0.45);
+      max-width: 540px;
+      margin: 0 auto 48px;
+      line-height: 1.55;
+    }
+
+    /* ── MISSION ─────────────────────────────────────────── */
+
+    .mission {
+      max-width: 620px;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
+
+    .mission p {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(17px, 2.5vw, 22px);
+      font-weight: 400;
+      line-height: 1.68;
+      color: rgba(221, 216, 207, 0.68);
+    }
+
+    .mission p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── DIVIDER ─────────────────────────────────────────── */
+
+    .rule {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 860px;
+      margin: 0 auto 52px;
+      padding: 0 24px;
+      opacity: 0.3;
+    }
+
+    .rule::before,
+    .rule::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--amber);
+    }
+
+    .rule-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+    }
+
+    /* ── SECTIONS ────────────────────────────────────────── */
+
+    .links-section {
+      padding: 0 0 96px;
+    }
+
+    .links-group {
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .links-grid.single {
+      grid-template-columns: 1fr;
+    }
+
+    .links-grid.thirds {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      .links-grid,
+      .links-grid.thirds {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── CARD ────────────────────────────────────────────── */
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.18s, background 0.18s, transform 0.14s, box-shadow 0.18s;
+      overflow: hidden;
+      outline: none;
+    }
+
+    .card:hover,
+    .card:focus-visible {
+      border-color: var(--border-warm);
+      background: var(--surface-2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Card with image: image on top, text below */
+    .card--img .card__image {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .card--img .card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease, opacity 0.3s;
+      opacity: 0.8;
+    }
+
+    .card--img:hover .card__image img {
+      transform: scale(1.03);
+      opacity: 0.95;
+    }
+
+    /* Gradient fade at bottom of image into card surface */
+    .card--img .card__image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 40%,
+        var(--surface) 100%
+      );
+      transition: background 0.18s;
+    }
+
+    .card--img:hover .card__image::after {
+      background: linear-gradient(
+        to bottom,
+        transparent 40%,
+        var(--surface-2) 100%
+      );
+    }
+
+    /* Text block */
+    .card__body {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    /* For text-only cards, body fills entire card */
+    .card:not(.card--img) .card__body {
+      padding: 22px 24px;
+    }
+
+    .card__cat {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 7px;
+    }
+
+    .card__title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .card__sub {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .card__arrow {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 14px;
+      color: var(--text-dim);
+      transition: color 0.18s, transform 0.18s;
+    }
+
+    /* Arrow sits on top of image cards — give it a subtle bg */
+    .card--img .card__arrow {
+      background: rgba(7, 9, 14, 0.5);
+      border-bottom-left-radius: var(--radius);
+    }
+
+    .card:hover .card__arrow,
+    .card:focus-visible .card__arrow {
+      color: var(--amber);
+      transform: translate(2px, -2px);
+    }
+
+    /* ── POPOVER ─────────────────────────────────────────── */
+
+    .popover {
+      position: fixed;
+      z-index: 500;
+      width: 310px;
+      background: #141826;
+      border: 1px solid rgba(200, 147, 60, 0.18);
+      border-radius: 4px;
+      padding: 20px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      box-shadow: 0 20px 56px rgba(0, 0, 0, 0.75);
+      display: none;
+    }
+
+    .popover.above { transform: translateY(-6px); }
+    .popover.below { transform: translateY(6px); }
+    .popover.active { opacity: 1; transform: translateY(0); }
+
+    .popover__title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--amber-light);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .popover__body {
+      font-size: 12.5px;
+      font-weight: 300;
+      color: rgba(221, 216, 207, 0.68);
+      line-height: 1.6;
+    }
+
+    .popover__list {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .popover__list li {
+      font-size: 11.5px;
+      color: rgba(221, 216, 207, 0.55);
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      line-height: 1.45;
+    }
+
+    .popover__list li:last-child { border-bottom: none; }
+
+    .popover__list li::before {
+      content: '— ';
+      color: var(--amber);
+      opacity: 0.45;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .site-footer p {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+
+    .site-footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .site-footer a:hover { color: var(--amber); }
+  </style>
+</head>
+<body>
+
+  <!-- Global popover tooltip -->
+  <div class="popover" id="popover" role="tooltip"></div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="container">
+      <div class="eyebrow">Charlottesville, Virginia</div>
+
+      <h1 class="site-name">
+        Eugene J. <em>Geis,</em> PhD
+      </h1>
+
+      <div class="credentials">
+        <span class="credential">PhD Rutgers &middot; Summa Cum Laude</span>
+        <span class="credential">Head of AI/ML &amp; Research &middot; Bitscopic</span>
+        <span class="credential">Ordained Minister &middot; Energy Work &middot; Meditation</span>
+      </div>
+
+      <p class="tagline">
+        The cascade is measurable, accelerating, and largely unexamined.<br>
+        The work is about holding frame.
+      </p>
+    </div>
+  </header>
+
+  <!-- ═══ MISSION ═══ -->
+  <div class="container">
+    <div class="mission">
+      <p>
+        As AI systems are engineered to feel human, people are quietly outsourcing their cognition &mdash; moving through attachment, dependency, and <strong>identity erosion</strong> without recognizing the pattern. My work across research, writing, education, and media is about giving people the tools to <strong>hold their frame</strong>: to think clearly, self-educate rapidly, and find genuine inspiration in one another.
+      </p>
+    </div>
+  </div>
+
+  <div class="rule" aria-hidden="true">
+    <div class="rule-dot"></div><div class="rule-dot"></div><div class="rule-dot"></div>
+  </div>
+
+  <!-- ═══ LINKS ═══ -->
+  <section class="links-section">
+    <div class="container">
+
+      <!-- CURRENT WORK -->
+      <div class="links-group">
+        <div class="section-label">Current Work</div>
+        <div class="links-grid single">
+          <a class="card"
+            href="https://bitscopic.com"
+            target="_blank" rel="noopener noreferrer"
+            data-popover-title="Bitscopic &mdash; Turning Healthcare Data into Decisions"
+            data-popover-body="Head of AI/ML &amp; Research. Building clinical AI systems that extract actionable intelligence from complex EHR data across genomics, infection surveillance, outbreak detection, and biobank management. Applied statistical rigor in environments where methodology actually matters.">
+            <div class="card__body">
+              <div class="card__cat">Work</div>
+              <div class="card__title">Bitscopic</div>
+              <div class="card__sub">Head of AI/ML &amp; Research &middot; Clinical intelligence &middot; Genomics, surveillance, outbreak detection</div>
+            </div>
+            <svg class="card__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- WRITING & MEDIA -->
+      <div class="links-group">
+        <div class="section-label">Writing &amp; Media</div>
+        <div class="links-grid">
+          <a class="card card--img"
+            href="https://medium.com/@eugene.geis"
+            target="_blank" rel="noopener noreferrer"
+            data-popover-title="Medium &mdash; @eugene.geis"
+            data-popover-body="Essays on the anthropomorphism cascade, cognitive self-defense, and the patterns most people aren't stopping to name."
+            data-popover-list='["AI\u2019s Anthropomorphism Cascade: Part 2 (Jan 2026)","AI\u2019s Anthropomorphism Cascade: Part 1 (Dec 2025)","An Inevitable Authenticity Crisis (Jul 2025)","Semantifacturing: Our New Bell Curve (May 2025)"]'>
+            <div class="card__image">
+              <img src="./hero.jpg" alt="The anthropomorphism cascade — a lone figure holding frame against digital dissolution" loading="lazy">
+            </div>
+            <div class="card__body">
+              <div class="card__cat">Writing</div>
+              <div class="card__title">Medium</div>
+              <div class="card__sub">Essays on AI, cognition, and the cascade</div>
+            </div>
+            <svg class="card__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a class="card card--img"
+            href="https://holdingframepodcast.com"
+            target="_blank" rel="noopener noreferrer"
+            data-popover-title="Holding Frame Podcast"
+            data-popover-body="Named after the central thesis. Conversations about maintaining psychological grounding as AI reshapes what it means to think, learn, and relate to one another. At the intersection of technology, cognition, and human resilience.">
+            <div class="card__image">
+              <img src="./meditation.jpg" alt="Energy and stillness — the practice of holding frame" loading="lazy">
+            </div>
+            <div class="card__body">
+              <div class="card__cat">Podcast</div>
+              <div class="card__title">Holding Frame</div>
+              <div class="card__sub">Cognition, resilience, and the human frame</div>
+            </div>
+            <svg class="card__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="links-group">
+        <div class="section-label">Education &amp; Practice</div>
+        <div class="links-grid thirds">
+          <a class="card card--img"
+            href="https://educationalshaman.com"
+            target="_blank" rel="noopener noreferrer"
+            data-popover-title="Educational Shaman"
+            data-popover-body="Frameworks for rapid self-education, critical thought, and intellectual self-reliance. Integrates energy work, meditation, and ordained ministry into a practice of teaching. The best cognitive defense isn&apos;t skepticism of AI &mdash; it&apos;s knowing how to think before you ever need to defend against anything.">
+            <div class="card__image">
+              <img src="./shaman.jpg" alt="Ancient tree of knowledge — the Educational Shaman" loading="lazy">
+            </div>
+            <div class="card__body">
+              <div class="card__cat">Education &middot; Practice</div>
+              <div class="card__title">Educational Shaman</div>
+              <div class="card__sub">Self-education, energy work &amp; meditation</div>
+            </div>
+            <svg class="card__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a class="card card--img"
+            href="https://phd2pro.com"
+            target="_blank" rel="noopener noreferrer"
+            data-popover-title="PhD2Pro &mdash; Ignis Spindler"
+            data-popover-body="Written under the Ignis Spindler pseudonym. A resource for academics navigating the gap between scholarly rigor and professional pragmatism &mdash; the skills, mindsets, and translations that doctoral programs don&apos;t teach.">
+            <div class="card__image">
+              <img src="./transition.jpg" alt="The threshold between academia and the world beyond it" loading="lazy">
+            </div>
+            <div class="card__body">
+              <div class="card__cat">Education</div>
+              <div class="card__title">PhD2Pro</div>
+              <div class="card__sub">Academia to industry &middot; As Ignis Spindler</div>
+            </div>
+            <svg class="card__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a class="card card--img"
+            href="https://www.amazon.com/MUN-social-diplomatic-influence-Education/dp/0985648619"
+            target="_blank" rel="noopener noreferrer"
+            data-popover-title="MUN-E &mdash; How to be social, win allies, influence people, and GAVEL!"
+            data-popover-body="A self-published guide to Model United Nations written for high school students at JP Stevens HS in Edison, NJ. Teaching structured discourse, social intelligence, and the art of diplomatic persuasion &mdash; skills that transfer far beyond the chamber.">
+            <div class="card__image">
+              <img src="./diplomacy.jpg" alt="The diplomacy and structured discourse of Model UN" loading="lazy">
+            </div>
+            <div class="card__body">
+              <div class="card__cat">Book &middot; Model UN</div>
+              <div class="card__title">MUN-E</div>
+              <div class="card__sub">Win allies, influence people, and GAVEL!</div>
+            </div>
+            <svg class="card__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RESEARCH -->
+      <div class="links-group">
+        <div class="section-label">Research</div>
+        <div class="links-grid">
+          <a class="card card--img"
+            href="https://arxiv.org/abs/1912.12755"
+            target="_blank" rel="noopener noreferrer"
+            data-popover-title="Dissertation &mdash; arXiv:1912.12755"
+            data-popover-body="Stochastic Approximation EM for Exploratory Item Factor Analysis. A 131-page methodological contribution applying MCMC and eigenanalysis to multidimensional Item Response Theory. Published in Statistics in Medicine (2019). Rutgers University, Summa Cum Laude.">
+            <div class="card__image" style="aspect-ratio: 16/6;">
+              <img src="./stats.jpg" alt="Latent variable pathways and Bayesian probability clouds" loading="lazy">
+            </div>
+            <div class="card__body">
+              <div class="card__cat">Statistics &middot; Psychometrics</div>
+              <div class="card__title">Dissertation</div>
+              <div class="card__sub"><em>Statistics in Medicine</em> &middot; 2019 &middot; arXiv:1912.12755</div>
+            </div>
+            <svg class="card__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a class="card card--img"
+            href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.101.042501"
+            target="_blank" rel="noopener noreferrer"
+            data-popover-title="Physical Review Letters &mdash; PRL 101, 042501"
+            data-popover-body="Nuclear form factor measurement published in Physical Review Letters &mdash; one of the most selective physics journals in the world. The result of Eugene&apos;s first doctorate in nuclear physics. A precise experimental contribution to our understanding of nuclear structure at the quantum scale.">
+            <div class="card__image" style="aspect-ratio: 16/6;">
+              <img src="./physics.jpg" alt="Nuclear physics — particle trajectories and quantum structure" loading="lazy">
+            </div>
+            <div class="card__body">
+              <div class="card__cat">Nuclear Physics &middot; First PhD</div>
+              <div class="card__title">Physical Review Letters</div>
+              <div class="card__sub">Nuclear form factor &middot; PRL 101, 042501 (2008)</div>
+            </div>
+            <svg class="card__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- PROFESSIONAL -->
+      <div class="links-group">
+        <div class="section-label">Professional</div>
+        <div class="links-grid single">
+          <a class="card"
+            href="https://www.linkedin.com/in/eugenegeis"
+            target="_blank" rel="noopener noreferrer"
+            data-popover-title="LinkedIn &mdash; Eugene J. Geis PhD"
+            data-popover-body="Charlottesville, VA. Full-stack AI/ML and data science leadership. Statistical methodology, MLOps, clinical data systems, psychometrics. Two doctorates. 500+ connections.">
+            <div class="card__body">
+              <div class="card__cat">Professional Network</div>
+              <div class="card__title">LinkedIn</div>
+              <div class="card__sub">Eugene J. Geis PhD &middot; Charlottesville, VA &middot; 500+ connections</div>
+            </div>
+            <svg class="card__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>Eugene J. Geis, PhD &nbsp;&middot;&nbsp; Charlottesville, Virginia &nbsp;&middot;&nbsp; <a href="https://medium.com/@eugene.geis" target="_blank" rel="noopener">@eugene.geis on Medium</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const pop = document.getElementById('popover');
+      let current = null;
+      let hideTimer = null;
+
+      function buildContent(card) {
+        const title = card.dataset.popoverTitle || '';
+        const body  = card.dataset.popoverBody  || '';
+        let list = [];
+        try {
+          if (card.dataset.popoverList) list = JSON.parse(card.dataset.popoverList);
+        } catch (_) {}
+
+        let html = '';
+        if (title) html += `<div class="popover__title">${title}</div>`;
+        if (body)  html += `<div class="popover__body">${body}</div>`;
+        if (list.length) {
+          html += '<ul class="popover__list">';
+          list.forEach(i => { html += `<li>${i}</li>`; });
+          html += '</ul>';
+        }
+        return html;
+      }
+
+      function place(card) {
+        const r   = card.getBoundingClientRect();
+        const pw  = 310;
+        const gap = 10;
+        const sy  = window.scrollY;
+
+        let left = r.left + r.width / 2 - pw / 2;
+        left = Math.max(12, Math.min(left, window.innerWidth - pw - 12));
+
+        const above = r.top > 200;
+        pop.className = 'popover ' + (above ? 'above' : 'below');
+        pop.style.left  = left + 'px';
+        pop.style.width = pw + 'px';
+        pop.style.top   = above
+          ? (sy + r.top  - gap) + 'px'
+          : (sy + r.bottom + gap) + 'px';
+
+        if (above) {
+          // translate upward so bottom of popover meets gap above card
+          pop.style.transform = 'translateY(-100%)';
+        } else {
+          pop.style.transform = 'translateY(0)';
+        }
+      }
+
+      function show(card) {
+        clearTimeout(hideTimer);
+        current = card;
+        pop.innerHTML = buildContent(card);
+        pop.style.display = 'block';
+        pop.offsetHeight; // force reflow before transition
+        place(card);
+        requestAnimationFrame(() => pop.classList.add('active'));
+      }
+
+      function hide() {
+        hideTimer = setTimeout(() => {
+          pop.classList.remove('active');
+          current = null;
+          setTimeout(() => {
+            if (!pop.classList.contains('active')) pop.style.display = 'none';
+          }, 200);
+        }, 80);
+      }
+
+      // Only on true pointer devices
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        document.querySelectorAll('.card[data-popover-body]').forEach(card => {
+          card.addEventListener('mouseenter', () => show(card));
+          card.addEventListener('mouseleave', hide);
+          card.addEventListener('focus',      () => show(card));
+          card.addEventListener('blur',       hide);
+        });
+      }
+
+      window.addEventListener('scroll', () => { if (current) place(current); }, { passive: true });
+      window.addEventListener('resize', () => { if (current) place(current); });
+    })();
+  </script>
+</body>
+</html>
