@@ -23,7 +23,8 @@ open index.html
 - **`hero.jpg`** — Lone figure holding frame against a cascading digital storm. Used on the Medium card.
 - **`physics.jpg`** — Nuclear physics particle trajectories / quantum structure. Used on both Research cards.
 - **`diplomacy.jpg`** — Diplomatic council chamber with warm amber light. Used on PhD2Pro and MUN-E cards.
-- **`meditation.jpg`** — Meditating figure with luminous energy rings. Used on Educational Shaman and Holding Frame Podcast cards.
+- **`shaman.jpg`** — Ancient tree of knowledge. Used on the MindWright.ai card.
+- **`meditation.jpg`** — Meditating figure with luminous energy rings. Used on the Holding Frame Podcast card.
 
 All images generated with Gemini `nano-banana-pro-preview`, 16:9, saved to disk (do not regenerate unless explicitly asked).
 
@@ -47,7 +48,7 @@ Eugene's brand centers on **cognitive sovereignty** and the **anthropomorphism c
 | bitscopic.com | Eugene Geis | Current employer — healthcare AI | none |
 | medium.com/@eugene.geis | Eugene Geis | Long-form writing | hero.jpg |
 | holdingframepodcast.com | Eugene Geis | Podcast | meditation.jpg |
-| educationalshaman.com | Eugene Geis | Self-education, energy work, meditation | meditation.jpg |
+| mindwright.ai | Eugene Geis | Workshops, coaching, curriculum on the human half of AI; free course "You Are The Harness" | shaman.jpg |
 | phd2pro.com | **Ignis Spindler** | PhD → industry transition | diplomacy.jpg |
 | amazon.com/…/0985648619 | Eugene Geis | MUN-E book (Model UN, JP Stevens HS) | diplomacy.jpg |
 | arxiv.org/abs/1912.12755 | Eugene Geis | Dissertation (statistics, 2nd PhD) | physics.jpg |
